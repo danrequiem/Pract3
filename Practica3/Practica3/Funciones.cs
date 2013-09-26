@@ -59,6 +59,9 @@ namespace Practica3
 							
 				Edit = (Persona)(Tabla [codigoE]);
 
+				if (Tabla.ContainsKey (codigoE))
+				 {
+
 				Console.Write("Codigo:");
 				Console.WriteLine(Edit.Codigo);
 
@@ -84,8 +87,15 @@ namespace Practica3
 
 				//Correo
 				Console.Write ("Correo:");
-				Edit.Correo = Console.ReadLine();
+					Edit.Correo = Console.ReadLine();
+				}
+				else
+				{
+					Console.WriteLine("Este codigo no existe");
+					Console.Write ("Continuar");
 
+				}
+				Thread.Sleep(1000);
 				Console.Clear ();
 
 						
@@ -97,7 +107,7 @@ namespace Practica3
 
 		public void Eliminar()
 		{
-			for (int i=0; i<=2; i++) 
+			for (int i=0; i<2; i++) 
 			{
 				Persona Elm= new Persona ();
 
@@ -146,7 +156,7 @@ namespace Practica3
 
 				}
 
-				Thread.Sleep(10000);
+				Thread.Sleep(1000);
 				Console.Clear ();
 
 			}
