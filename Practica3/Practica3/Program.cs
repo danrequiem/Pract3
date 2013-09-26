@@ -11,7 +11,7 @@ namespace Practica3
 
 			F.Ingresar ();
 			F.Editar ();
-
+			F.Eliminar ();
 		}
 
 
