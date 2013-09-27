@@ -6,15 +6,12 @@ namespace Practica3
 	{
 		public static void Main (string[] args)
 		{
-
 			Funciones F = new Funciones ();
-
 			F.Ingresar ();
 			F.Editar ();
 			F.Eliminar ();
+			F.Mostar();
+			Console.ReadKey();
 		}
-
-
-
 	}
 }

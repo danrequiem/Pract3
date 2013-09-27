@@ -1,168 +1,162 @@
-using System;
-using System.Collections;
-using System.Threading;
+	using System;
+	using System.Collections;
+	using System.Threading;
 
-namespace Practica3
-{
-	public class Funciones
+	namespace Practica3
 	{
-
-		public Hashtable Tabla = new Hashtable();
-
-
-		public Funciones ()
+		public class Funciones
 		{
-		}
-		 
-		public void Ingresar()
-		{
+			public Hashtable Tabla;
 
-			for (int i=0; i<4; i++) 
+			public Funciones()
 			{
-				Persona P = new Persona ();
-
-				Console.WriteLine ("Ingrese los Datos de la Persona");
-
-				//Codigo
-				Console.Write("Codigo:");
-				P.Codigo = int.Parse(Console.ReadLine());
-
-				//Nombre
-				Console.Write ("Nombre:");
-				P.Nombre = Console.ReadLine();
-
-				//Telefono
-				Console.Write ("Telefono:");
-				P.Telefono = Console.ReadLine();
-				 
-				//Correo
-				Console.Write ("Correo:");
-				P.Correo = Console.ReadLine();
-
-				Tabla.Add(P.Codigo,P);
-
-				Console.Clear ();
+				this.Tabla = new Hashtable();
 			}
-
-		}
-
-		public void Editar()
-		{
-			for (int i=0; i<2; i++) 
+			 
+			public void Ingresar()
 			{
-
-			 	Persona Edit = new Persona ();
-					
-				 
-				Console.Write("Ingrese el codigo de la persona a editar:");
-				int codigoE = int.Parse (Console.ReadLine ());
-							
-				Edit = (Persona)(Tabla [codigoE]);
-
-				if (Tabla.ContainsKey (codigoE))
-				 {
-
-				Console.Write("Codigo:");
-				Console.WriteLine(Edit.Codigo);
-
-				Console.Write("Nombre:");
-				Console.WriteLine(Edit.Nombre);
-
-				Console.Write("Telefono:");
-				Console.WriteLine(Edit.Telefono);
-
-				Console.Write("Correo:");
-				Console.WriteLine(Edit.Correo);
-
-
-				Console.WriteLine ();
-				Console.WriteLine("Editar");
-
-				Console.Write ("Nombre:");
-				Edit.Nombre = Console.ReadLine();
-
-				//Telefono
-				Console.Write ("Telefono:");
-				Edit.Telefono = Console.ReadLine();
-
-				//Correo
-				Console.Write ("Correo:");
-					Edit.Correo = Console.ReadLine();
-				}
-				else
+				for (int i=0; i<4; i++) 
 				{
-					Console.WriteLine("Este codigo no existe");
-					Console.Write ("Continuar");
+					Persona P = new Persona ();
 
-				}
-				Thread.Sleep(1000);
-				Console.Clear ();
+					Console.WriteLine ("Ingrese los Datos de la Persona");
 
-						
-
-
-			}
-
-		}
-
-		public void Eliminar()
-		{
-			for (int i=0; i<2; i++) 
-			{
-				Persona Elm= new Persona ();
-
-				Console.Write("Ingrese el codigo de la persona a Elimar:");
-				int codigoE = int.Parse (Console.ReadLine ());
-
-				Elm = (Persona)(Tabla [codigoE]);
-
-				if (Tabla.ContainsKey (codigoE) == true) {
-
-					Console.Write ("Codigo:");
-					Console.WriteLine (Elm.Codigo);
+					Console.Write("Codigo:");
+					P.Codigo = int.Parse(Console.ReadLine());
 
 					Console.Write ("Nombre:");
-					Console.WriteLine (Elm.Nombre);
+					P.Nombre = Console.ReadLine();
 
-					Console.Write ("Telefono:");
-					Console.WriteLine (Elm.Telefono);
-
+					Console.Write ("Teléfono:");
+					P.Telefono = Console.ReadLine();
+					 
 					Console.Write ("Correo:");
-					Console.WriteLine (Elm.Correo);
+					P.Correo = Console.ReadLine();
 
+					Tabla.Add(P.Codigo,P);
+
+					Console.Clear ();
 				}
-
-				if (Tabla.ContainsKey (codigoE) == true) {
-					Console.Write ("¿Esta seguro de elimnar a esta persona? si)1 no)0: ");
-					int opc = int.Parse (Console.ReadLine ());
-
-					if (opc == 1) 
-					{
-						Tabla.Remove (codigoE);
-						Console.Write ("Se elimino la persona");
-					}
-					if (opc == 0) 
-					{
-						Console.Write ("No se elimino la persona");
-
-					}
-
-
-
-				} else 
-				{
-					Console.WriteLine("Este codigo no existe");
-					Console.Write ("Continuar");
-
-				}
-
-				Thread.Sleep(1000);
-				Console.Clear ();
 
 			}
 
+			public void Editar()
+			{
+				for (int i=0; i<2; i++) 
+				{
+					Console.Write("Ingrese el codigo de la persona a editar:");
+					int codigoE = int.Parse (Console.ReadLine ());
+					if (Tabla.ContainsKey (codigoE))
+					{
+						//				
+						Persona Edit = (Persona)(Tabla[codigoE]);
+						
+						Console.Write("Codigo:");
+						Console.WriteLine(Edit.Codigo);
+
+						Console.Write("Nombre:");
+						Console.WriteLine(Edit.Nombre);
+
+						Console.Write("Telefono:");
+						Console.WriteLine(Edit.Telefono);
+
+						Console.Write("Correo:");
+						Console.WriteLine(Edit.Correo);
+
+
+						Console.WriteLine ();
+						Console.WriteLine("Editar");
+
+						Console.Write ("Nombre:");
+						Edit.Nombre = Console.ReadLine();
+
+						Console.Write ("Telefono:");
+						Edit.Telefono = Console.ReadLine();
+
+						Console.Write ("Correo:");
+						Edit.Correo = Console.ReadLine();
+					}
+					else
+					{
+						Console.WriteLine("Este codigo no existe");
+						Console.Write ("Continuar");
+					}
+					Thread.Sleep(1000);
+					Console.Clear ();
+				}
+
+			}
+
+			public void Eliminar()
+			{
+				for (int i=0; i<2; i++) 
+				{
+					Console.Write("Ingrese el codigo de la persona a Elimar:");
+					int codigoE = int.Parse (Console.ReadLine ());
+					if (Tabla.ContainsKey (codigoE) == true) {
+						Persona Elm = new Persona();
+						Elm = (Persona)(Tabla [codigoE]);
+
+						Console.Write ("Codigo:");
+						Console.WriteLine (Elm.Codigo);
+
+						Console.Write ("Nombre:");
+						Console.WriteLine (Elm.Nombre);
+
+						Console.Write ("Telefono:");
+						Console.WriteLine (Elm.Telefono);
+
+						Console.Write ("Correo:");
+						Console.WriteLine (Elm.Correo);
+
+						Console.Write ("¿Esta seguro de elimnar a esta persona? si)1 no)0: ");
+						int opc = int.Parse (Console.ReadLine ());
+						if (opc == 1) 
+						{
+							Tabla.Remove (codigoE);
+							Console.Write ("Se elimino la persona");
+							Thread.Sleep(1000);
+							Console.Clear ();
+						}
+		
+					} 
+					else 
+					{
+						Console.WriteLine("Este codigo no existe");
+						Console.WriteLine("Continuar");
+						Thread.Sleep(1000);
+						Console.Clear();
+					}
+				}
+					Thread.Sleep(1000);
+					Console.Clear ();
+			}
+			
+			
+			public void Mostar()
+			{
+				
+				Console.WriteLine("Las Personas Restantes son estas:");
+				Console.WriteLine();
+				IDictionaryEnumerator enumerador = Tabla.GetEnumerator();
+			    while ( enumerador.MoveNext() )
+				{
+					Persona Mos = (Persona)(Tabla[enumerador.Key]);
+					Console.Write ("Codigo:");
+					Console.WriteLine (Mos.Codigo);
+
+					Console.Write ("Nombre:");
+					Console.WriteLine (Mos.Nombre);
+
+					Console.Write ("Telefono:");
+					Console.WriteLine (Mos.Telefono);
+
+					Console.Write ("Correo:");
+					Console.WriteLine (Mos.Correo);
+					Console.WriteLine();
+
+				}
+			}
 		}
-	
 	}
-}
 

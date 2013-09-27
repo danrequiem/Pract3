@@ -2,9 +2,9 @@
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|x86" />
   <MonoDevelop.Ide.Workbench ActiveDocument="Practica3/Funciones.cs">
     <Files>
-      <File FileName="Practica3/Program.cs" Line="14" Column="7" />
-      <File FileName="Practica3/Persona.cs" Line="14" Column="4" />
-      <File FileName="Practica3/Funciones.cs" Line="126" Column="31" />
+      <File FileName="Practica3/Program.cs" Line="16" Column="4" />
+      <File FileName="Practica3/Persona.cs" Line="1" Column="1" />
+      <File FileName="Practica3/Funciones.cs" Line="147" Column="8" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
